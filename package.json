@@ -4,7 +4,7 @@
   "description": "Hacking With React - following book",
   "main": "index.js",
   "scripts": {
-    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,23 @@
     "url": "https://github.com/hanschun/hacking-with-react/issues"
   },
   "homepage": "https://github.com/hanschun/hacking-with-react#readme",
+  "jest": {
+      "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+      "unmockedModulePathPatterns": [
+        "<rootDir>/node_modules/react",
+        "<rootDir>/node_modules/react-dom",
+        "<rootDir>/node_modules/react-addons-test-utils",
+        "<rootDir>/node_modules/fbjs"
+      ]
+  },
   "devDependencies": {
     "babel-core": "^6.4.5",
+    "babel-jest": "^6.0.1",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "jest-cli": "^0.8.2",
+    "react-addons-test-utils": "^0.14.6",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"

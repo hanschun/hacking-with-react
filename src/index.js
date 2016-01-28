@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 import createHistory from 'history/lib/createHashHistory';
 
-import Detail from './pages/Detail';
-import List from './pages/List';
+import routes from './routes';
 
 ReactDOM.render(
     <Router history={createHistory({ queryKey: false })}
       onUpdate={() => window.scrollTo(0, 0)}>
-      <Route path="/" component={ List } />
-      <Route path="/react" component={ Detail } />
+      {routes}
     </Router>,
     document.getElementById('app')
 );
